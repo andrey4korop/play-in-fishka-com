@@ -1,0 +1,138 @@
+#centercontainer {
+position: relative;
+width:1500px;
+margin: 80px auto;
+max-width:100%;/* Выравнивание по центру */
+
+
+
+}
+
+/* ЛЕВАЯ КОЛОНКА */
+#left_column {
+width: 250px; 
+float: left;
+/*margin-right: 100px;*/
+
+}
+/* ПРАВАЯ КОЛОНКА */
+#right_column {
+width: 250px; 
+float: right;
+
+}
+/* ЦЕНТРАЛЬНАЯ КОЛОНКА */
+#content {
+margin: 100px 300px 0 200px; /* Отступ на ширину левой и правой колонки*/
+}
+
+/* Описание названия категории */
+.name_categories ul li {
+padding: 8px 0 10px 20px;
+position: relative;
+border-bottom: 1px solid #dcdcdc;
+} 
+.name_categories{margin-bottom:50px;}
+
+.name_categories ul li a{
+color: #2a2e3a;
+}
+.name_categories{
+color: #2a2e3a;
+}
+.name_categories ul li:before {
+    position: absolute;
+    top: 10px;
+    left: 0;
+    display: block;
+    content: "\f0da";
+    font-family: 'FontAwesome';
+    font-size: 14px;
+    color: #dc2a0b;
+    margin-right: 10px;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1.2;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}  
+.name_title {
+	margin-bottom: 20px;
+    font-family: 'Open sans', sans-serif;
+    font-weight: 400;
+}
+
+/*НОВОСТИ*/
+
+.main_news {
+	width: 80%;
+	float:left;
+	display:inline;
+}
+
+.last_news1 h3{ margin-bottom: 30px;font-family: 'Open sans', sans-serif;font-weight: 200;}
+.o_service1
+{
+    margin-left:2%;
+    }
+.bloglist-small1 {
+    list-style: none outside none;
+    margin: 0;
+    padding: 0;
+}
+.bloglist-small1 li {
+    border-bottom: 1px dotted #868585;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    line-height: 20px;
+}
+
+.date-box1 {
+    position: absolute;
+    text-align: center;
+    width: 60px;
+}
+.date-box1 .day1 {
+    background: none repeat scroll 0 0 #555555;
+    color: #FFFFFF !important;
+    display: block;
+    font-size: 26px;
+    padding: 20px 0;
+}
+.date-box1 .month1 {
+	color: #FFFFFF;
+    display: block;
+    font-size: 12px;
+    background: #D4202B;
+}
+.bloglist-small1 li .txt1 {
+    padding-left: 80px;
+    line-height: 20px;
+    font-family: 'Open sans',sans-serif;
+}
+.txt1 h5{
+    
+    font-size:16px;
+    font-weight:500;
+}
+.bloglist-small1 li .read1 {
+    display: block;
+    margin-bottom: 5px;
+}
+.bloglist-small1 li .info1 {
+    color: #AAAAAA;
+    display: block;
+    font-size: 11px;
+    margin: 0;
+}
+
+
+.one_third1 {
+	width: 200px;
+  float: left;
+  margin: 20px ;
+
+  }
+
+.one_third1 img{ max-width:100%;
+}
