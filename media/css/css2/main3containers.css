@@ -1,6 +1,6 @@
-#centercontainer {
+﻿#centercontainer {
 position: relative;
-width:1500px;
+
 margin: 80px auto;
 max-width:100%;/* Выравнивание по центру */
 
@@ -10,14 +10,14 @@ max-width:100%;/* Выравнивание по центру */
 
 /* ЛЕВАЯ КОЛОНКА */
 #left_column {
-width: 250px; 
+
 float: left;
 /*margin-right: 100px;*/
 
 }
 /* ПРАВАЯ КОЛОНКА */
 #right_column {
-width: 250px; 
+
 float: right;
 
 }

@@ -1,22 +1,21 @@
 <?php
- class Login extends CI_Controller {
+defined('BASEPATH') OR exit('No direct script access allowed');
+require_once(APPPATH.'controllers/Site.php');
+ class Login extends Site{
+
        public function index()
 	    {
-            $this->load->library('session');
+         //   $this->load->library('session');
             $this->load->helper(array('form', 'url','cookie'));
             $this->load->library('form_validation');
             $this->load->model('registration_model');
 		    $this->load->model('object_model');
-             foreach ($this->session->userdata() as $key => $value) 
-                {
-                         $data[$key]= $value;
-                }
-           
-            if (isset($data['name']))
+       
+            if (isset($this->data['session']['name']))
             {
                 
                 //$this->load->view('main_view',$data);
-                redirect(base_url().'faq', 'location');
+                redirect(base_url().'statistic', 'location');
             }
             elseif (!isset($_POST)) 
             {
@@ -49,14 +48,15 @@
                     $res=$this->registration_model->check_nick(set_value('nick'));
                     if ($res->pass == set_value('pass'))
                     {
-                        foreach ($res as $key => $value) {
+                        foreach ($res as $key => $value) 
+                        {
                            $cookie[$key]=$value;
                         }
                         
                         
                         $this->session->set_userdata($cookie);
                         //$this->load->view('main_view',$cookie);
-                        redirect(base_url().'faq', 'location');
+                        redirect(base_url().'statistic', 'location');
 
                     }
                     else 

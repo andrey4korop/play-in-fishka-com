@@ -197,7 +197,7 @@ class Object extends CI_Controller {
             // var_dump($dolya);
             $stol=$this->object_model->get_stol_games($stol_name);
             // echo '<pre>';
-                        
+             $m=0;           
             foreach ($users as $user)     
             {
                 
@@ -221,11 +221,21 @@ class Object extends CI_Controller {
                     $minute1=substr($user->time, 14, 2);
                     $second1=substr($user->time, 17, 2);
                     //var_dump($day1,$month1,$year1,$hour1,$minute1,$second1);
-                    $user->any_time=$prev_game->any_time+($second1-$second)+( $minute1- $minute)*60+($hour1-$hour)*60*60+($day1-$day)*60*60*24+($month1-$month)*60*60*24*30+($year1-$year)*60*60*24*365;
+                    if ($user->money_lose!=0)
+                    {
+                        $user->any_time=$prev_game->any_time+($second1-$second)+( $minute1- $minute)*60+($hour1-$hour)*60*60;
+                        if ($user->any_time<0)
+                        {
+                            $user->any_time+=60*60*24;
+                        }
+                        $m++;
+                    }
+                    
                     
                 }
+                $this->object_model->update_stol_games(($rakeback/$m),$number_game)
                 
-                $prev_game=$this->object_model->get_prev_game($number_game, $user->gamer);
+                $prev_game=$this->object_model->get_prev_game($stol[1]->number_game, $user->gamer);
                 //echo '<br> prev <br>';
                 //var_dump($prev_game[0]);
                 $dokup_fishek=0;
@@ -239,6 +249,10 @@ class Object extends CI_Controller {
                         
                     }
                     $user->dokupka=$dokup_fishek;
+                }
+                else
+                {
+                    $user->dokupka=$user->balance;                ////чувак заш'л в игру'
                 }
                 
                 //var_dump($user);
@@ -262,7 +276,11 @@ class Object extends CI_Controller {
                 $minute1=substr($last_stol->time, 14, 2);
                 $second1=substr($last_stol->time, 17, 2);
 
-                $dtime=($second-$second1)+($minute-$minute1)*60+($hour-$hour1)*60*60+($day-$day1)*60*60*24+($month-$month1)*60*60*24*30+($year-$year1)*365*60*60*24;
+                $dtime=($second-$second1)+($minute-$minute1)*60+($hour-$hour1)*60*60;
+                if ($dtime<0)
+                        {
+                            $dtime+=60*60*24;
+                        }
                 $stol->time_stol=$last_stol->time_stol+$dtime;
                 $this->object_model->update_stol_info($stol);
 

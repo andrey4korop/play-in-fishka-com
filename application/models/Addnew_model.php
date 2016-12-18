@@ -16,7 +16,39 @@ class Addnew_model extends CI_Model {
 
             }
 
+            public function getnew() 
+            {
+              $this->db->order_by('id', 'DESC');
+              $res=$this->db->get('news');
+              return $res->result();
+            }
 
+            public function getone($num) 
+            {
+              $this->db->where('id', $num);
+              $res=$this->db->get('news');
+              return $res->row_array();
+            }
+
+            public function update($num,$title,$text,$img) 
+            {
+              $this->db->where('id', $num);
+              $data = array(
+                'title' => $title,
+                'text' => $text,
+                'img' => $img
+             );
+              $this->db->update('news',$data);
+              
+            }
+
+            public function del($num) 
+            {
+              $this->db->where('id', $num);
+              
+              $this->db->delete('news');
+              
+            }
 
 
 }

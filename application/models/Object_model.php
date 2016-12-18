@@ -39,7 +39,8 @@ class Object_model extends CI_Model {
                         'money_lose' => $user->money_lose,
                         'time' => $user->time,
                         'any_time' => $user->any_time,  
-                        'dokupka' => $user->dokupka                     
+                        'dokupka' => $user->dokupka,
+                        'flag'=>'1'                     
                         );
 
 
@@ -60,6 +61,18 @@ class Object_model extends CI_Model {
               
 
         }
+        public function update_stol_games($reckback,$number_game)
+        {
+                $this->db->where('number_game', $number_game);
+                $data = array(
+                        'rakeback' => $reckback                        
+                        );
+
+
+              $this->db->update('stol_games', $data);
+              
+
+        }
 
         public function get_stol_games($stol_name)
         {
@@ -74,6 +87,18 @@ class Object_model extends CI_Model {
               return $query->result();
 
         }
+
+        public function get_stol_rackdack($number_game)
+        {
+             
+             $this->db->where('number_game', $number_game);
+             
+             $query=$this->db->get('stol_games');
+             
+              return $query->row();
+
+        }
+
         public function get_prev_data_gamer($number_game, $gamer)
         {
              $this->db->where('number_game', $number_game);

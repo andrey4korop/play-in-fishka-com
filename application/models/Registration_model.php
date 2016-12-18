@@ -37,6 +37,30 @@ class Registration_model extends CI_Model {
             }
 
 
+             public function update_user($name, $nick, $pass, $email, $city, $phone1, $phone2, $affileyt, $type, $persent,$foto)
+            {
+                $data = array(
+                        'name' => $name,
+                        'pass' => $pass,
+                        'email' => $email,
+                        'phone1' => $phone1,
+                        'phone2' => $phone2,
+                        'affileyt' => $affileyt,
+                        'type' => $type,
+                        'persent' => $persent,
+                        'city' => $city,
+                        'nick' => $nick,
+                        'pass_md5' => md5($pass),
+                        'foto'=> $foto,
+                        'prava'=>'loser'                     
+                        );
+
+                 $this->db->where('nick',$nick);       
+              $this->db->update('users', $data);
+
+            }
+
+
 
 
 }

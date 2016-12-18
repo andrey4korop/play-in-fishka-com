@@ -1,0 +1,210 @@
+#slider {
+ width: 50%;
+ color: #66666;
+ font-family: Georgia;
+ font-size: 20px;
+ margin: 0 auto;
+
+ padding: 0 50px;
+ margin-top: 5%;
+ }
+.header {
+ 
+ border: 1px solid #cccccc;
+ padding: 8px;
+ margin-top: 5px;
+ cursor: pointer;
+ text-align: center;
+ 
+ }
+
+.image_center {
+    text-align: center; /* Выравнивание по центру */ 
+   }
+ .image_opacity{
+    opacity: 0.5;
+	padding /* Полупрозрачность элемента */
+   }
+
+   .image_opacity1{
+    
+	padding /* Полупрозрачность элемента */
+   }
+.header:hover {
+ color: #eeeeee;
+ background-color: #D4202B;
+ }
+.content {
+ overflow: hidden;
+ }
+
+.linia{
+
+border-width:  3px 0 0 ;
+margin: 3px 0;
+}
+
+
+.text {
+ width: 100%;
+ border: 1px solid #cccccc;
+ border-top: none;
+ padding: 15px;
+ text-align: left;
+ background: #eeeeee;
+ font-size: 14px;
+ }
+.text_inside {
+ font-size:13px;
+ font-weight: 600;
+ width: 96%;
+ text-align: justify;
+ text-indent: 15px; 
+ margin: 0;
+ }
+ .text_inside2 {
+ font-size:13px;
+ font-weight: 600;
+ width: 96%;
+ text-align: justify;
+ text-indent: 15px; 
+ margin-bottom: 10px;
+ margin-top: 7px;
+ }
+ .text_balance {
+ font-size:13px;
+ font-weight: 600;
+ width: 96%;
+ text-align: justify;
+ text-indent: 15px; 
+ margin-right: 5px;
+ margin-top: 7px;
+ }
+  .text_balance1 {
+ font-size:13px;
+ font-weight: 600;
+ width: 96%;
+ text-align: right;
+ text-indent: 15px; 
+ margin-top: 7px;
+ }
+ .text_table {
+ font-size:13px;
+ font-weight: 600;
+ width: 96%;
+ text-align: right;
+ text-indent: 15px; 
+ margin: 0;
+ }
+ .text_table2 {
+ font-size:13px;
+ font-weight: 600;
+ width: 96%;
+ text-align: right;
+ text-indent: 15px; 
+ margin-top: 7px;
+ margin-bottom: 10px;
+ }
+ .text_inside1 {
+ font-size:13px;
+ font-weight: 600;
+ width: 96%;
+ text-align: center;
+ text-indent: 15px; 
+ margin: 5px;
+
+ }
+ 
+
+.poker-mega-menu li:hover > a,
+.poker-mega-menu li.current > a {
+	background: #D4202B;
+	color: #fff;
+}
+
+.poker-mega-menu form .button {
+	float: right;
+	height: 39px;
+	overflow: hidden;
+	margin-left: 20px;
+	padding: 0 20px;
+	outline: none;
+	border: 0;
+	background-color: #D4202B;
+	font: 300 13px/39px 'Open Sans', Helvetica, Arial, sans-serif;
+	text-decoration: none;
+	color: #fff;
+	cursor: pointer;
+	opacity: 0.8;
+	transition: opacity 0.2s;
+	-o-transition: opacity 0.2s;
+	-ms-transition: opacity 0.2s;
+	-moz-transition: opacity 0.2s;
+	-webkit-transition: opacity 0.2s;
+}
+
+table {
+    width: 100%; /* Ширина таблицы */
+    background: white; /* Цвет фона таблицы */
+    color: black; /* Цвет текста */
+    border-spacing: 1px; /* Расстояние между ячейками */
+	margin: 0;
+   }
+
+.imgtable{
+	float: left;
+}
+
+.imgtable1{
+	text-align: center;
+    margin: o auto;
+}
+
+
+.progress {
+    background: -moz-linear-gradient(top, #333, #999); /* Fx 3.6+ */
+    background: -webkit-linear-gradient(top, #333, #999); /* Chrome 10+,Safari 5.1+ */
+    background: -o-linear-gradient(top, #333,#999); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #333, #999); /* IE10+ */
+    background: linear-gradient(to bottom, #333, #999); /* W3C */
+    border: 1px solid #333; /* Рамка */
+    height: 20px; /* Высота */
+    border-radius: 10px; /* Радиус скругления */
+    position: relative; /* Относительное позиционирование */
+    overflow: hidden; /* Прячем ненужную тень */
+   }
+   .progress::before{
+    content: '';
+    position: absolute; /* Абсолютное позиционирование */
+    height: 18px; width: 100px;
+    background: red; /* Для старых браузеров */
+    background: -moz-linear-gradient(top, red, darkred 50%, red); /* Fx 3.6+ */
+    background: -webkit-linear-gradient(top, red, darkred 50%, red); /* Chrome 10+,Safari 5.1+ */
+    background: -o-linear-gradient(top, red,darkred 50%,red); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, red, darkred 50%, red); /* IE10+ */
+    background: linear-gradient(to bottom, red,darkred 50%, red); /* W3C */
+    border: 1px solid red; /* Рамка */
+    box-shadow: 3px 0 3px rgba(0,0,0,0.5); /* Тень справа */
+   }
+
+#krug{
+-moz-border-radius: 50px; /* Firefox */
+ -webkit-border-radius: 50px; /* Safari, Chrome */
+ -khtml-border-radius: 50px; /* KHTML */
+border-radius: 100px; /* Радиус скругления */
+height: 30px;
+float: left;
+margin-top: 5px;
+ } 
+
+ #nickmain{
+font-size:13px;
+ font-weight: 600;
+ display: block;
+ text-align: justify;
+ text-indent: 15px; 
+ margin-left: 5px; 
+
+ }
+
+   

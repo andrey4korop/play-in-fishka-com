@@ -1,62 +1,41 @@
 <?php
-class Afileyn extends CI_Controller {
+defined('BASEPATH') OR exit('No direct script access allowed');
+require_once(APPPATH.'controllers/Site.php');
+class Afileyn extends Site {
 
       function index()
 	{
-                $this->load->library('session');
+        
+
+        $this->data['gamers']=$this->faq_model->get_user_af( $this->data['session']['nick']);
+        $o=1;
+        foreach ($this->data['gamers'] as $gamers) 
+        {
+                       
+              $res=$this->faq_model->get_user2_info($gamers->nick);
+              
+           
+           if(isset($res))
+           {
+               
+              $this->data['ggg'][$o++]=$res->any_time*0.5*$gamers->persent/100;
+           }
+           else
+           {
                 
-                foreach ($this->session->userdata() as $key => $value) 
-                {
-                         $data[$key]= $value;
+               $this->data['ggg'][$o++]=0;
+           }
+
+
+
+        }
+
+
+        $this->load->view('afileyn', $this->data);
+        if (!isset($this->data['session']['prava']) )
+		{ 
+                    redirect(base_url(), 'location');
                 }
-                
-                $this->load->model('faq_model');
-                $stols=$this->faq_model->get_stols_names();
-
-                foreach ($stols as  $stol) 
-                {
-                        $number_game=$this->faq_model->get_stols_number($stol->stol_name);
-                        $time=$this->faq_model->get_stols_info($number_game->number_game);
-                        $count=count($time);
-                        $day=substr($time[1]->time, 0, 2);
-                        $month=substr($time[1]->time, 3, 2);
-                        $year=substr($time[1]->time, 6, 4);
-                        $hour=substr($time[1]->time, 11, 2);
-                        $minute=substr($time[1]->time, 14, 2);
-                        $second=substr($time[1]->time, 17, 2);
-                        $now_day=date('d');
-                        $now_month=date('m');
-                        $now_year=date('Y');
-                        $now_hour=date('H');
-                        $now_minute=date('i');
-                        $now_second=date('s');
-                        $time_metka= mktime ($hour+7, $minute, $second,  $month,  $day ,  $year );
-                        //mktime (date("H"), date("i"), date("s"), date("n"), date("j") , date("Y") );
-                        if (time()<$time_metka+60*10)
-                        {
-                            //  $data['slols'][$stol->stol_name] = array ('stol' => $stol->stol_name, 'count' => $count );
-                        }
-                        $data['stols'][$stol->stol_name] = array ('stol' => $stol->stol_name, 'count' => $count );
-                   
-                }
-
-                $data['gamers']=$this->faq_model->get_user_info();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                $this->load->view('afileyn', $data);
+        
     }
 }

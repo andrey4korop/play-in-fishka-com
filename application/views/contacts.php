@@ -10,29 +10,30 @@
 		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
-<link rel="stylesheet" href="<?=base_url(); ?>media/css/css2/base2.css"/>
-<link href="<?=base_url(); ?>media/css/css2/flexslider.css" rel="stylesheet" type="text/css" />
-<script type="text/javascript" src="<?=base_url(); ?>media/js/faq.js"></script>
+<link href="<?=base_url(); ?>media/css/main3containers.css" rel="stylesheet" type="text/css" />
+<link href="<?=base_url(); ?>media/css/contacts1.css" rel="stylesheet" type="text/css" />
+<link href="<?=base_url(); ?>media/css/contacts2.css" rel="stylesheet" type="text/css" />
+<link href="<?=base_url(); ?>media/css/menu.css" rel="stylesheet" type="text/css" />
 
-<link rel="stylesheet" href="<?=base_url(); ?>media/css/faq.css"/>
-<link rel="stylesheet" href="<?=base_url(); ?>media/css/css2/more_info.css"/>
-<link href="<?=base_url(); ?>media/css/css2/faq.css" rel="stylesheet" type="text/css" />
-<link href="<?=base_url(); ?>media/css/css2/main3containers.css" rel="stylesheet" type="text/css" />
-<link rel="stylesheet" href="<?=base_url(); ?>media/css/css2/blog_column.css"/>
-<link rel="stylesheet" href="<?=base_url(); ?>media/css/css2/contacts.css"/>
+<link rel="stylesheet" href="<?=base_url(); ?>media/css/more_info.css"/>
+
 <link rel="shortcut icon" href="<?=base_url(); ?>media/images/favicon.png">
-<link rel="apple-touch-icon" href="<?=base_url(); ?>media/images/apple-touch-icon.png">
-<link rel="apple-touch-icon" sizes="72x72" href="<?=base_url(); ?>media/images/apple-touch-icon-72x72.png">
-<link rel="apple-touch-icon" sizes="114x114" href="<?=base_url(); ?>media/images/apple-touch-icon-114x114.png">
+
 <link href="<?=base_url(); ?>media/css/font-awesome/css/font-awesome.css" rel="stylesheet" type="text/css" />
 <link href="<?=base_url(); ?>media/css/font-awesome-4.0.1/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
-<link href="<?=base_url(); ?>media/css/css2/menu.css" rel="stylesheet" type="text/css" />
+
 <link href='http://fonts.googleapis.com/css?family=Lato:400,700,900,400italic,700italic,900italic|Oswald:400,700,300&amp;subset=latin,latin-ext' rel='stylesheet' type='text/css'/>
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'/>
 <link href="http://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800,900" rel="stylesheet" type="text/css">
 
+<script type="text/javascript" src="<?=base_url(); ?>media/js/faq.js"></script>
 <script src="<?=base_url(); ?>media/js/jquery-1.10.1.min.js" type="text/javascript"></script>
 <script src="<?=base_url(); ?>media/js/jquery-migrate-1.2.1.min.js" type="text/javascript"></script>
+<script src="<?=base_url(); ?>media/js/slideproject/shCore.js" type="text/javascript"></script>
+<script src="<?=base_url(); ?>media/js/slideproject/shBrushXml.js" type="text/javascript"></script>
+<script src="<?=base_url(); ?>media/js/slideproject/shBrushJScript.js" type="text/javascript"></script>
+<script type="text/javascript" src="<?=base_url(); ?>media/js/jquery.easing.1.3.js"></script>
+<script src="<?=base_url(); ?>media/js/tabs.js" type="text/javascript"></script>
 
 </head>
 <body onload="slider('slider',0)">
@@ -55,21 +56,25 @@
     <img src="<?=base_url(); ?>media/images/logo2.jpg" alt="log" />
   </div>
 			<ul id="navmenu" class="poker-mega-menu poker-mega-menu-anim-scale poker-mega-menu-response-to-icons"><!-- mega menu -->
-				<li><a class="link_onepage" href="<?=base_url(); ?>"><i class="fa fa-check"></i>Главная</a></li>
-				<li><a class="link_onepage" href="<?=base_url(); ?>statistic"><i class="fa fa-eye"></i>Личный кабинет</a></li>
-				<li><a class="link_onepage" href="<?=base_url(); ?>faq"><i class="fa fa-star"></i>FAQ</a></li>
-				<li><a class="link_onepage" href="<?=base_url(); ?>afileyn"><i class="fa fa-bullhorn"></i>Афилейны</a></li>
-				<li><a class="link_onepage" href="<?=base_url(); ?>contacts"><i class="fa fa-briefcase"></i>Контакты</a></li>	
-				<?php if (isset($prava) && $prava=="admin")
+				<?php if ($session['prava']=="loser")
+					{ ?><li><a class="link_onepage" href="<?=base_url(); ?>"><i class="fa fa-check"></i>Общая статистика</a></li><?php } ?>
+				<li><a class="link_onepage" href="<?=base_url(); ?>new"><i class="fa fa-eye"></i>Новости</a></li>
+				<li><a class="link_onepage" href="<?=base_url(); ?>afileyn"><i class="fa fa-bullhorn"></i>Афилейты</a></li>
+					
+				<?php if (isset($session['prava']) && $session['prava']=="admin")
 					{ ?>
 				
-				<li aria-haspopup="true" class="right">
+				<li aria-haspopup="true" class="link_onepage">
 					<a href="<?=base_url(); ?>registration"><i class="fa fa-lock"></i>Регистрация</a>
+					
+				</li>
+				<li aria-haspopup="true" class="link_onepage">
+					<a href="<?=base_url(); ?>gamers"><i class="fa fa-lock"></i>Игроки</a>
 					
 				</li>
 				<?php		} ?>
 				<li aria-haspopup="true" class="right"><!-- форма логина-->
-					<?php if (!isset($name))
+					<?php if (!isset($session['name']))
 					{ ?>
 					<a href="#_"><i class="fa fa-sign-in"></i>Войти</a>
 					<div class="grid-container4">
@@ -81,29 +86,33 @@
 							</fieldset>						
 						</form>
 					</div>	
-							<?php	} 
+				<?php	} 
 						else { 
-							echo "<a id='nickmain'>",$nick,"<img id='krug'  src='",base_url(),$foto,"'  ></a>"; ?>
-							<div class="grid-container13">
+							echo "<a id='nickmain'>",$session['nick'],"<img id='krug'  src='",base_url(),$session['foto'],"'  ></a>"; ?>
+							<div class="grid-container3">
 						    <ul>
-															
-								
+			<?php if (isset($session['prava']) && $session['prava']=="admin")
+					{ ?>
+                
+				<li><a class="link_onepage" href="<?=base_url(); ?>new"><i class="fa fa-eye"></i>Новости</a></li>
+                <li><a class="link_onepage" href="<?=base_url(); ?>addnew"><i class="fa fa-eye"></i>Добавить новости</a></li>
+				<li><a href="<?=base_url(); ?>registration"><i class="fa fa-lock"></i>Регистрация</a></li>
+                <li><a href="<?=base_url(); ?>gamers"><i class="fa fa-briefcase"></i>Игроки</a></li>
+<li><a href="<?=base_url(); ?>oplatastol"><i class="fa fa-lock"></i>Оплата стола</a></li>
+				<?php		} ?>
+				<li><a class="link_onepage" href="<?=base_url(); ?>afileyn"><i class="fa fa-bullhorn"></i>Афилейты</a></li>
+                <li><a class="link_onepage" href="<?=base_url(); ?>contacts"><i class="fa fa-briefcase"></i>Контакты</a></li>	
+                <li><a class="link_onepage" href="<?=base_url(); ?>faq"><i class="fa fa-star"></i>FAQ</a></li>
 								<li><a href='<?=base_url(); ?>login/out'><i class="fa fa-check"></i>Выйти</a></li>
 								</ul>				
-						
-					</div>
-				<?php		
-				}
-				
-				/*<a href='#_' id='nickmain'><img id='krug'  src='",base_url(),$foto,"'  ></a>*/
-				
-				 ?>
+						  </div>
+				<?php		} ?>
 					
 					
 					
 					
 					
-				</li>	
+				</li>
 			</ul>
      </div>
 </div>
@@ -127,53 +136,17 @@
 			<ul>
 				<table>
 						<tr>
-						<td><img class="imgtable"src="<?=base_url(); ?>media/images/money1.png"><p class="text_inside">Баланс</p></td>
-						<td><p class="text_table">кол. фишек</p></td>
+						<td><img class="imgtable"src="<?=base_url(); ?>media/images/money1.png"><p class="text_inside">Ваш баланс:</p></td>
+						<td><p class="text_table"><?=$balance; ?></p></td>
 						
 						</tr>
 						
-						<tr>
-						<td> <hr class="linia"><img class="imgtable"src="<?=base_url(); ?>media/images/ticket.png"><p class="text_balance">Билеты</p></td>
-						<td> <hr class="linia"><p class="text_balance1">Кол. билетов</p></td>
-						</tr>
-						<tr>
-						<td><hr class="linia"><img class="imgtable"src="<?=base_url(); ?>media/images/chips.png"> <p class="text_inside2">FP</p><hr class="linia"></td>
-						<td> <hr class="linia"><p class="text_table2">Кол. игр</p><hr class="linia"></td>
-						</tr>
+						
 						</table>
-						<div class="progress"></div>
-			   <p  class="text_inside1"><a href="#">Описание карты</a></p>
+						
 			</ul>
 		</div>
-		<h3 class="name_title">Количество FP</h3>
-<div class="name_categories">
-			<ul>
-				<div id='cat' >
-<h4 ><a href='#' class="text_balance">Текущий год</a ></h4 >
-<p >
-<a href='#' class="text_balance">1</a ><br / >
-<a href='#' class="text_balance">2</a ><br />
-<a href='#' class="text_balance">3</a ><br / >
-</p >
-
-<h4 ><a href='#' class="text_balance" >2015г.</a ></h4 >
-<p >
-<a href='#' class="text_balance" >1</a ><br / >
-<a href='#' class="text_balance">2</a ><br / >
-<a href='#' class="text_balance">3</a ><br / >
-<a href='#' class="text_balance">4</a ><r / >
-</p >
-
-<h4 ><a href='#' class="text_balance" >2014г.</a ></h4 >
-<p >
-<a href='#' class="text_balance">1</a ><br / >
-<a href='#' class="text_balance">2</a ><br / >
-<a href='#' class="text_balance">3</a ><br / >
-<a href='#' class="text_balance">4</a ><br / >
-</p >
- </div >
-			</ul>
-		</div>
+		
 		</div>
 
 <div id="right_column">
@@ -209,7 +182,7 @@
 
 
 <div id="contacts_form">
-                        <form method="post" id="contacts_form" class="form1">
+                        <form method="post" id="contacts_form" class="form1" action="<?=base_url(); ?>contacts/mail">
                                 
 
                                 <div class="email">                                  
@@ -225,14 +198,14 @@
 <ul>
 						<table class="tablecontact">
 						<tr>
-						<td><img class="imgtable" src="<?=base_url(); ?>media/images/contacts/2.png"><p class="contact_text2">+38 (093) 456 78 90</p></td>
-						<td><img class="imgtable" src="<?=base_url(); ?>media/images/contacts/4.png"><p class="contact_text2">+38 (093) 456 78 90</p></td>
+						<td><img class="imgtable1" src="<?=base_url(); ?>media/images/contacts/2.png"><p class="contact_text2">+38 (093) 456 78 90</p></td>
+						<td><img class="imgtable1" src="<?=base_url(); ?>media/images/contacts/4.png"><p class="contact_text2">+38 (093) 456 78 90</p></td>
 						
 						</tr>
 						
 						<tr>
-						<td> <hr><img class="imgtable" src="<?=base_url(); ?>media/images/contacts/1.png"><p class="contact_text3">vk.com/poler_ua_2016</p></td>
-						<td> <hr><img class="imgtable" src="<?=base_url(); ?>media/images/contacts/3.png"><p class="contact_text3">facebook.com/poker_ua_2016</p></td>
+						<td> <hr><img class="imgtable1" src="<?=base_url(); ?>media/images/contacts/1.png"><p class="contact_text3"><a href="#" >vk.com/poker_ua_2016</a></p></td>
+						<td> <hr><img class="imgtable1" src="<?=base_url(); ?>media/images/contacts/3.png"><p class="contact_text3"><a href="#" >facebook.com/poker_ua_2016</a></p></td>
 						</tr>
 						</table>			
 					</ul>
@@ -242,10 +215,21 @@
 
 
 </div>
-
+</div>
 </div>
 
-
+<div class="g-hr type_short"><span class="g-hr-h"><i class="fa fa-bookmark-o"></i></span></div>
+<div id="section-2"><!-- Program Intro -->
+    <section id="programbg">
+        <div>
+        <article>
+            
+            <div class="container txt_parallax_top">
+            </div>
+        </article>
+       </div>
+    </section>
+</div>
 
 
 
@@ -275,8 +259,7 @@ $(this).next('p').slideToggle('slow');
 
 
 
-<script type="text/javascript" src="<?=base_url(); ?>media/js/jquery.easing.1.3.js"></script>
-<script src="<?=base_url(); ?>media/js/tabs.js" type="text/javascript"></script>
+
 <!--Text Effect-->
 <script src="<?=base_url(); ?>media/js/jquery.lettering.js"></script>
 		<script>
@@ -312,21 +295,19 @@ $(this).next('p').slideToggle('slow');
   </script>
 
 <!-- Chat !-->
-
+<?php if ($session['prava']=="loser")
+					{ ?>
 <script type='text/javascript'>
 (function(){ var widget_id = '5OMvgiUnWO';var d=document;var w=window;function l(){
 var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = '//code.jivosite.com/script/widget/'+widget_id; var ss = document.getElementsByTagName('script')[0]; ss.parentNode.insertBefore(s, ss);}if(d.readyState=='complete'){l();}else{if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})();</script>
 
-
-
-
+<?php 
+	} ?>
 <!-- / Chat !-->
 
 
 
 
-  <script src="<?=base_url(); ?>media/js/slideproject/shCore.js" type="text/javascript"></script>
-  <script src="<?=base_url(); ?>media/js/slideproject/shBrushXml.js" type="text/javascript"></script>
-  <script src="<?=base_url(); ?>media/js/slideproject/shBrushJScript.js" type="text/javascript"></script>
+  
 </body>
 </html>

@@ -1,0 +1,21 @@
+table#users
+{
+width: 100%;
+}
+#users td{
+   
+    text-align: left;
+    vertical-align: middle;
+    padding: 1%;
+    margin: 0 auto;
+    
+}
+#users td img{
+   
+    text-align: center;
+    align-content: center;
+    vertical-align: middle;
+    padding: 1%;
+    margin: 0 auto;
+    
+}

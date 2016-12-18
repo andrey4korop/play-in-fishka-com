@@ -1,34 +1,5 @@
 
-@font-face {
-    font-family: "OswaldLight";
-    font-style: normal;
-    font-weight: normal;
-    src: url("../fonts/Oswald-Light-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/Oswald-Light-webfont.woff") format("woff"), url("../fonts/Oswald-Light-webfont.ttf") format("truetype");
-}
-@font-face {
-    font-family: "OswaldBook";
-    font-style: normal;
-    font-weight: normal;
-    src: url("../fonts/Oswald-Regular-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/Oswald-Regular-webfont.woff") format("woff"), url("../fonts/Oswald-Regular-webfont.ttf") format("truetype");
-}
-@font-face {
-    font-family: "OswaldBold";
-    font-style: normal;
-    font-weight: normal;
-    src: url("../fonts/Oswald-Bold-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/Oswald-Bold-webfont.woff") format("woff"), url("../fonts/Oswald-Bold-webfont.ttf") format("truetype");
-}
-@font-face {
-    font-family: "OswaldStencilRegular";
-    font-style: normal;
-    font-weight: normal;
-    src: url("../fonts/Oswald-Stencil-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/Oswald-Stencil-webfont.woff") format("woff"), url("../fonts/Oswald-Stencil-webfont.ttf") format("truetype");
-}
 
-* {margin:0; padding:0; outline:0}
-body {font:12px Verdana,Arial; margin:25px; background-color:#e6edf2; overflow-x:hidden}
-#tablewrapper {width:100%; margin:0 auto}
-#tableheader {height:55px;width:100%;}
-#tableheader option{padding-left:4px;font-size:13px; background-color:#ecf2f6;}
 .search 
 {
     float:left; padding:6px; 
@@ -89,7 +60,8 @@ body {font:12px Verdana,Arial; margin:25px; background-color:#e6edf2; overflow-x
 
 /*****************Button Style******************/
 
-.btn-reset {}.txt-txt{font-family:BebasNeuewebfont, sans-serif; font-size:17px;}
+.btn-reset {}
+.txt-txt{font-family:BebasNeuewebfont, sans-serif; font-size:17px;}
 
 .button {
 	display: inline-block;
@@ -134,7 +106,8 @@ body {font:12px Verdana,Arial; margin:25px; background-color:#e6edf2; overflow-x
 	background: #990307;
 
 }
-   /* 
+
+   /* 
 	Max width before this PARTICULAR table gets nasty
 	This query will take effect for any screen smaller than 760px
 	and also iPads specifically.

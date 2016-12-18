@@ -567,7 +567,7 @@ section#programbg1 {
 	overflow: hidden;
 }
 section#programbg1{
- background: url(../images/about_casino.jpg) no-repeat fixed;
+ background: url(../images/downfaq.jpg) no-repeat fixed;
  margin: 0;
  width:100%;
  -webkit-background-size: cover;
@@ -577,7 +577,7 @@ section#programbg1{
 }
 #programbg1>div:nth-of-type(2) 
 {
- background:url(../images/bg_p.png) repeat top left;
+ background:url(../images/downfaq.jpg) repeat top left;
  background-color: rgba(0, 0, 0, 0.3);
 }
 section#programbg1 article {

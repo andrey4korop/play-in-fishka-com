@@ -1,5 +1,4 @@
-﻿
-@font-face {
+﻿@font-face {
 	font-family: 'BebasNeuewebfont';
 	src: url('fonts/BebasNeuewebfont.eot');
 	src: local('BebasNeuewebfont'), url('fonts/BebasNeuewebfont.woff') format('woff'), url('fonts/BebasNeuewebfont.ttf') format('truetype');
@@ -2618,7 +2617,7 @@ form#contact_form {
 	padding-bottom: 10px;
     padding-top: 10px;
     position: relative;
-    width: 50%;
+    width: 100%;
     margin: 0 auto;
 }
 
@@ -2631,15 +2630,17 @@ form#contact_form p {
 	margin-bottom:10px;
 	padding-top:5px;
 	font-style:italic;
-	color:#878787;
+	color:white;
 	font-size:14px;
+    text-align: center;
 }
 form#contact_form .message {
 	padding-left:20px;
 	padding-top:10px;
 }
 div#loader {
-	margin-left: 20px;
+	margin-left: 10%;
+    margin-top: 30px;
 	margin-bottom:30px;
 }
 form#contact_form input[type="text"] {
@@ -2650,6 +2651,16 @@ form#contact_form input[type="text"] {
 	width: 50%;
 	margin-bottom:20px;
 	color:#fff;
+}
+form#contact_form textarea[type="text"] {
+	border: 1px solid rgba(255,255,255,0.3);
+	background-color: transparent;
+	height: 30px;
+	padding: 0 10px;
+	width: 50%;
+	margin-bottom:20px;
+	color:#fff;
+    margin: 0 auto;
 }
 form#contact_form input#email {
 	border: 1px solid rgba(255,255,255,0.3);;
@@ -2691,14 +2702,14 @@ form#contact_form input[type="submit"] {
 	font-size:12px;
 	text-transform:uppercase;
 	color:#fff;
-	margin-bottom:10px;
+	
 	-webkit-transition: all 0.3s ease;
 	-moz-transition: all 0.3s ease-in-out;
 	-o-transition: all 0.3s ease-in-out;
 	-ms-transition: all 0.3s ease-in-out;
 	transition: all 0.3s ease-in-out;
 	cursor:pointer;
-}
+    }
 form#contact_form input[type="submit"]:hover {color:#ccc;}
 .map-container iframe, .map-container object, .map-container embed {
 	position: absolute;

@@ -11,10 +11,10 @@
 <meta name="author" content="Чухрай&&Карнашенко"/>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
 
-<link rel="stylesheet" href="<?=base_url(); ?>media/css/base2.css" media="screen" type="text/css"/>
-<link rel="stylesheet" href="<?=base_url(); ?>media/css/style.authorization.css" media="screen" type="text/css" />
+<link rel="stylesheet" href="<?=base_url(); ?>media/css/authorization1.css" media="screen" type="text/css"/>
+<link rel="stylesheet" href="<?=base_url(); ?>media/css/authorization2.css" media="screen" type="text/css" />
 
-<link rel="stylesheet" href="<?=base_url(); ?>media/css/screen3.css"/>
+
 <link rel="shortcut icon" href="<?=base_url(); ?>media/images/favicon.png"> 
 
 <script src="<?=base_url(); ?>media/js/slideproject/modernizr.js" type="text/javascript"></script>
@@ -62,7 +62,7 @@
         <br/>
             <div class="main-signin">
 		        <div class="main-signin__head">
-		<p>АВТОРИЗИРОВАТЬСЯ НА САЙТЕ</p>
+		<p style="word-wrap: break-word;">ВОЙТИ НА САЙТ</p>
 		        </div>
 		    <div class="main-signin__middle">
 			    <div class="middle__form">
@@ -71,13 +71,12 @@
 				            <input type="password" placeholder="Пароль" name="pass">
 				            <input type="submit" value="ВОЙТИ">
                     </form>
-    			</div>
-		    </div>
-		
-	        </div>
-    </div>
-                </article>
-    </div>
+               </div>
+           </div>		
+           </div>
+      </div>
+              </article>
+      </div>
 </section>
   
 </body>
